@@ -1,0 +1,159 @@
+﻿/* Search bar styling */
+.searchbar {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    color: #202124;
+    display: flex;
+    z-index: 3;
+    height: 44px;
+    background: white;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.searchbar:hover {
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    border-color: rgba(223, 225, 229, 0);
+}
+
+.searchbar-wrapper {
+    flex: 1;
+    display: flex;
+    padding: 5px 8px 0 14px;
+}
+
+.searchbar-left {
+    display: flex;
+    align-items: center;
+    padding-right: 13px;
+}
+
+.search-icon-wrapper {
+    margin: auto;
+}
+
+.search-icon {
+    color: #9aa0a6;
+    height: 20px;
+    width: 20px;
+}
+
+.searchbar-center {
+    display: flex;
+    flex: 1;
+}
+
+.searchbar-input {
+    background-color: transparent;
+    border: none;
+    color: rgba(0, 0, 0, 0.87);
+    outline: none;
+    width: 100%;
+    height: 34px;
+    font-size: 16px;
+    max-width: 100%;
+}
+
+/* Title and radio buttons styling */
+.sec-title.centered h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.radio-button-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.radio-button {
+    position: relative;
+    cursor: pointer;
+}
+
+.radio-button__input {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio-button__label {
+    padding-left: 30px;
+    font-size: 15px;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.radio-button__custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #555;
+}
+
+.radio-button__input:checked + .radio-button__label .radio-button__custom {
+    background-color: #4c8bf5;
+    border-color: transparent;
+    box-shadow: 0 0 20px #4c8bf580;
+}
+
+.radio-button__input:checked + .radio-button__label {
+    color: #4c8bf5;
+}
+
+.radio-button__label:hover .radio-button__custom {
+    border-color: #4c8bf5;
+    box-shadow: 0 0 20px #4c8bf580;
+}
+
+.sub-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.auto-container {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;  
+    height: 100vh;  
+}
+
+/* File type options */
+.file-options {
+    display: flex;
+    justify-content: center;  
+    gap: 20px;  
+}
+/* Button styling */
+.theme-btn-one {
+    display: inline-block;  
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    padding: 14px 36px;
+    border-radius: 30px;
+    background: #111;
+    border: none; 
+    cursor: pointer; 
+    transition: all 500ms ease;
+}
+
+/* Hover effect for the button */
+.theme-btn-one:hover {
+    background: #333; 
+}
+
+/* Centering the button container */
+.btn-box {
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    height: 30vh;  
+}
+

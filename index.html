@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFile Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Message -->
+    <header style="text-align: center; margin-bottom: 20px;">
+        <h2 id="message-title" style="color: red;">Don't forget to pray for our brothers in Palestine</h2>
+        <p id="message-creator" style="margin: 10px 0; font-weight: bold;">This code was created by Musa Al Ahmed</p>
+        <p id="message-copyright">I don't want any copyright, and anyone is free to use this code however they want</p>
+    </header>
+
+    <!-- Translation Button -->
+    <!-- زر الترجمة -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <button id="translate-btn" onclick="translatePage()" class="theme-btn-one">Translate to Arabic</button>
+    </div>
+
+    <!-- Instagram Follow Section -->
+    <!-- قسم تابعني على الإنستغرام -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <p>تابعني على إنستغرام</p>
+        <a href="https://www.instagram.com/musa_tech4/" target="_blank">
+            <button class="theme-btn-one">musa_tech4</button>
+        </a>
+    </div>
+
+    <!-- QuickFile Search Section -->
+    <!-- قسم البحث في QuickFile -->
+    <section>
+        <div class="auto-container">
+            <!-- Title Section -->
+            <!-- قسم العنوان -->
+            <div class="sec-title centered">
+                <h2 id="main-title">What Do You Want to Look For?</h2>
+            </div>
+
+            <!-- Search Bar Section -->
+            <!-- قسم شريط البحث -->
+            <div class="searchbar" style="margin-bottom: 40px;">
+                <div class="searchbar-wrapper">
+                    <div class="searchbar-left">
+                        <div class="search-icon-wrapper">
+                            <span class="search-icon">&#128269;</span>
+                        </div>
+                    </div>
+                    <div class="searchbar-center">
+                        <input type="text" id="searchQuery" class="searchbar-input"
+                         placeholder="Please type the data you want to search" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- File Type Selection Section -->
+            <!-- قسم اختيار نوع الملف -->
+            <h3 class="sub-title" id="file-type-title">Searched File</h3>
+            <div class="file-options radio-button-container clearfix">
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="exe" name="fileType" value="exe">
+                    <label class="radio-button__label" for="exe">
+                        <span class="radio-button__custom"></span> Exe
+                    </label>
+                </div>
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="pdf" name="fileType" value="pdf">
+                    <label class="radio-button__label" for="pdf">
+                        <span class="radio-button__custom"></span> Pdf
+                    </label>
+                </div>
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="rar" name="fileType" value="rar">
+                    <label class="radio-button__label" for="rar">
+                        <span class="radio-button__custom"></span> Rar
+                    </label>
+                </div>
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="all" name="fileType" value="">
+                    <label class="radio-button__label" for="all">
+                        <span class="radio-button__custom"></span> All
+                    </label>
+                </div>
+            </div>
+
+            <!-- Search Point Selection Section -->
+            <!-- قسم اختيار نقطة البحث -->
+            <h3 class="sub-title" id="search-point-title">Search Point</h3>
+            <div class="file-options radio-button-container">
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="drive" name="searchPoint" value="drive.google.com">
+                    <label class="radio-button__label" for="drive">
+                        <span class="radio-button__custom"></span> Google Drive 
+                    </label>
+                </div>
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="article" name="searchPoint" value="article">
+                    <label class="radio-button__label" for="article">
+                        <span class="radio-button__custom"></span> As Article
+                    </label>
+                </div>
+                <div class="radio-button">
+                    <input type="radio" class="radio-button__input" id="book" name="searchPoint" value="book">
+                    <label class="radio-button__label" for="book">
+                        <span class="radio-button__custom"></span> As a Book  
+                    </label>
+                </div>
+            </div>
+
+            <!-- Search Button Section -->
+            <!-- قسم زر البحث -->
+            <div class="btn-box">
+                <button class="theme-btn-one" onclick="performSearch()">Search</button>
+            </div>
+        </div>
+    </section>
+    <!-- End of QuickFile Search Section -->
+    <!-- نهاية قسم البحث في QuickFile -->
+
+    <script src="script.js"></script>
+
+    <!-- Translation Function -->
+    <script>
+        let isArabic = false; // To track the current language
+
+        function translatePage() {
+            if (!isArabic) {
+                // Translate to Arabic
+                document.getElementById('message-title').innerText = 'لا تنسوا الدعاء لإخواننا في فلسطين';
+                document.getElementById('message-creator').innerText = 'تم عمل الكود بواسطة موسى الأحمد';
+                document.getElementById('message-copyright').innerText = 'لا أريد حقوق نشر، وبإمكان أي شخص أخذ الأكواد واستعمالها بالشكل الذي يريد';
+
+                document.getElementById('main-title').innerText = 'ماذا تريد أن تبحث عنه؟';
+                document.getElementById('file-type-title').innerText = 'نوع الملف المراد البحث عنه';
+                document.getElementById('search-point-title').innerText = 'نقطة البحث';
+
+                document.getElementById('translate-btn').innerText = 'Translate to English'; // Change button text to English
+                isArabic = true;
+            } else {
+                // Translate back to English
+                document.getElementById('message-title').innerText = 'Don\'t forget to pray for our brothers in Palestine';
+                document.getElementById('message-creator').innerText = 'This code was created by Musa Al Ahmed';
+                document.getElementById('message-copyright').innerText = 'I don\'t want any copyright, and anyone is free to use this code however they want';
+
+                document.getElementById('main-title').innerText = 'What Do You Want to Look For?';
+                document.getElementById('file-type-title').innerText = 'Searched File';
+                document.getElementById('search-point-title').innerText = 'Search Point';
+
+                document.getElementById('translate-btn').innerText = 'Translate to Arabic'; // Change button text back to Arabic
+                isArabic = false;
+            }
+        }
+    </script>
+
+</body>
+</html>
